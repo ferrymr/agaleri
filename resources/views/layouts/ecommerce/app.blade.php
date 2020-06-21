@@ -1,0 +1,10 @@
+@include('layouts.ecommerce.header')
+@include('layouts.ecommerce.menu')
+      @guest
+        @yield('content')
+        @else
+        @yield('style')
+        @yield('content')
+        @endguest
+@include('layouts.ecommerce.footer')
+@yield('script')

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+
+		<title> SmartAdmin </title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+
+		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+
+		<!-- SmartAdmin RTL Support -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css">
+
+		<!-- We recommend you use "your_style.css" to override SmartAdmin
+		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+
+		<!-- FAVICONS -->
+		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+
+		<!-- GOOGLE FONT -->
+		<link rel="stylesheet" href="fonts/google/font.css">
+
+		<!-- Specifying a Webpage Icon for Web Clip
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
+
+	</head>
+
+	<!-- #BODY -->
+	<!--
+
+	TABLE OF CONTENTS.
+
+	Use search to find needed section.
+
+	===================================================================
+
+	|  01. #CSS Links                |  all CSS links and file paths  |
+	|  02. #FAVICONS                 |  Favicon links and file paths  |
+	|  03. #GOOGLE FONT              |  Google font link              |
+	|  04. #APP SCREEN / ICONS       |  app icons, screen backdrops   |
+	|  05. #BODY                     |  body tag                      |
+	|  06. #HEADER                   |  header tag                    |
+	|  07. #PROJECTS                 |  project lists                 |
+	|  08. #TOGGLE LAYOUT BUTTONS    |  layout buttons and actions    |
+	|  09. #MOBILE                   |  mobile view dropdown          |
+	|  10. #SEARCH                   |  search field                  |
+	|  11. #NAVIGATION               |  left panel & navigation       |
+	|  12. #RIGHT PANEL              |  right panel userlist          |
+	|  13. #MAIN PANEL               |  main panel                    |
+	|  14. #MAIN CONTENT             |  content holder                |
+	|  15. #PAGE FOOTER              |  page footer                   |
+	|  16. #SHORTCUT AREA            |  dropdown shortcuts area       |
+	|  17. #PLUGINS                  |  all scripts and plugins       |
+
+	===================================================================
+
+	-->
+
+	<!-- #BODY -->
+	<!-- Possible Classes
+
+		* 'smart-style-{SKIN#}'
+		* 'smart-rtl'         - Switch theme mode to RTL
+		* 'menu-on-top'       - Switch to top navigation (no DOM change required)
+		* 'no-menu'			  - Hides the menu completely
+		* 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
+		* 'fixed-header'      - Fixes the header
+		* 'fixed-navigation'  - Fixes the main menu
+		* 'fixed-ribbon'      - Fixes breadcrumb
+		* 'fixed-page-footer' - Fixes footer
+		* 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
+	-->
+	<body class="">
+
+		<!-- HEADER -->
+		<header id="header">
+			<div id="logo-group">
+
+				<!-- PLACE YOUR LOGO HERE -->
+				<span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
+				<!-- END LOGO PLACEHOLDER -->
+				</div>
+
+			<!-- pulled right: nav area -->
+			<div class="pull-right">
+
+				<!-- collapse menu button -->
+				<div id="hide-menu" class="btn-header pull-right">
+					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+				</div>
+				<!-- end collapse menu -->
+
+				<!-- #MOBILE -->
+				<!-- Top menu profile link : this shows only when top menu is active -->
+				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+					<li class="">
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+							<img src="img/avatars/sunny.png" alt="Cecep Abu Fatih" class="online" />
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> Setting</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="toggleShortcut"><i class="fa fa-arrow-down"></i> <u>S</u>hortcut</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Full <u>S</u>creen</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="login.html" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<!-- logout button -->
+				<div id="logout" class="btn-header transparent pull-right">
+					<span> <a href="login.html" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
+				</div>
+				<!-- end logout button -->
+
+
+			</div>
+			<!-- end pulled right: nav area -->
+
+		</header>
+		<!-- END HEADER -->
+
+		<!-- Left panel : Navigation area -->
+		<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+		<aside id="left-panel">
+
+			<!-- User info -->
+			<div class="login-info">
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it -->
+
+					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+						<img src="img/avatars/sunny.png" alt="me" class="online" />
+						<span>
+							Cecep Abu Fatih
+						</span>
+						<i class="fa fa-angle-down"></i>
+					</a>
+
+				</span>
+			</div>
+			<!-- end user info -->
+
+			<nav>
+				<!--
+				NOTE: Notice the gaps after each icon usage <i></i>..
+				Please note that these links work a bit different than
+				traditional href="" links. See documentation for details.
+				-->
+
+				<ul>
+					<li >
+						<a href="dashboard.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
+					</li>
+					<li>
+						<a href="mesin.html"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Mesin</span></a>
+					</li>
+					<li class="active open">
+						<a href="user.html"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">User</span></a>
+					</li>
+				</ul>
+			</nav>
+
+
+			<span class="minifyme" data-action="minifyMenu">
+				<i class="fa fa-arrow-circle-left hit"></i>
+			</span>
+
+		</aside>
+		<!-- END NAVIGATION -->
+
+		<!-- MAIN PANEL -->
+		<div id="main" role="main">
+
+			<!-- RIBBON -->
+			<div id="ribbon">
+
+				<span class="ribbon-button-alignment">
+					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+						<i class="fa fa-refresh"></i>
+					</span>
+				</span>
+
+				<!-- breadcrumb -->
+				<ol class="breadcrumb">
+					<li>Master User</li>
+				</ol>
+				<!-- end breadcrumb -->
+
+				<!-- You can also add more buttons to the
+				ribbon for further usability
+
+				Example below:
+
+				<span class="ribbon-button-alignment pull-right">
+				<span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+				<span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+				<span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+				</span> -->
+
+			</div>
+			<!-- END RIBBON -->
+
+			<!-- MAIN CONTENT -->
+			<div id="content">
+
+				<div class="row">
+					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+						<h1 class="page-title txt-color-blueDark"><i class="fa fa-desktop fa-fw "></i>
+							Master User
+						</h1>
+					</div>
+					<div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+						<ul id="sparks" class="">
+							<li class="sparks-info">
+								<h5> Income <span class="txt-color-blue">Rp. 46.500.000</span></h5>
+								<div class="sparkline txt-color-blue hidden-mobile hidden-md hidden-sm">
+									1300, 1877, 2500, 2577, 2000, 2100, 3000, 2700, 3631, 2471, 2700, 3631, 2471
+								</div>
+							</li>
+							<li class="sparks-info">
+								<h5> Member <span class="txt-color-greenDark"><i class="fa fa-users"></i>&nbsp;2447</span></h5>
+								<div class="sparkline txt-color-greenDark hidden-mobile hidden-md hidden-sm">
+									110,150,300,130,400,240,220,310,220,300, 270, 210
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- widget grid -->
+				<section id="widget-grid" class="">
+
+					<!-- row -->
+					<div class="row">
+
+						<!-- NEW WIDGET START -->
+						<article class="col-sm-12 col-md-12 col-lg-12">
+
+							<!-- Widget ID (each widget will need unique ID)-->
+							<div class="jarviswidget jarviswidget-color-blue" id="wid-id-1" data-widget-editbutton="false">
+								<!-- widget options:
+								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+								data-widget-colorbutton="false"
+								data-widget-editbutton="false"
+								data-widget-togglebutton="false"
+								data-widget-deletebutton="false"
+								data-widget-fullscreenbutton="false"
+								data-widget-custombutton="false"
+								data-widget-collapsed="true"
+								data-widget-sortable="false"
+
+								-->
+								<header>
+									<span class="widget-icon"> <i class="fa fa-sitemap"></i> </span>
+									<h2>Master User </h2>
+
+								</header>
+
+								<!-- widget div-->
+								<div>
+
+									<!-- widget edit box -->
+									<div class="jarviswidget-editbox">
+										<!-- This area used as dropdown edit box -->
+
+									</div>
+									<!-- end widget edit box -->
+
+									<!-- widget content -->
+									<div class="widget-body">
+
+
+
+							<!-- Widget ID (each widget will need unique ID)-->
+							<!-- <div class="jarviswidget jarviswidget-sortable" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" role="widget"> -->
+								<!-- widget options:
+								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+								data-widget-colorbutton="false"
+								data-widget-editbutton="false"
+								data-widget-togglebutton="false"
+								data-widget-deletebutton="false"
+								data-widget-fullscreenbutton="false"
+								data-widget-custombutton="false"
+								data-widget-collapsed="true"
+								data-widget-sortable="false"
+
+								-->
+
+								<!-- widget div-->
+								<div role="content">
+
+									<!-- widget edit box -->
+									<div class="jarviswidget-editbox">
+										<!-- This area used as dropdown edit box -->
+
+									</div>
+									<!-- end widget edit box -->
+
+									<!-- widget content -->
+									<div class="widget-body">
+
+										<form class="form-horizontal" _lpchecked="1">
+
+											<fieldset>
+												<legend>Tambah User</legend>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Nama User</label>
+													<div class="col-md-10">
+														<input class="form-control" placeholder="Masukkan Nama User Lengkap" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;); cursor: auto;" type="text">
+													</div>
+												</div>
+
+												<div class="form-group">
+
+														<label class="col-md-2 control-label">Status</label>
+														<div class="col-md-10">
+															<label class="radio radio-inline">
+																<input type="radio">
+																Pemilik Mesin </label>
+															<label class="radio radio-inline">
+																<input type="radio">
+																Member PRC </label>
+														</div>
+
+												</div>
+
+												<div class="form-group">
+													<label class="col-md-2 control-label">Password User</label>
+													<div class="col-md-10">
+														<input class="form-control" placeholder="Password field" value="mypassword" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;); cursor: auto;" type="password">
+													</div>
+												</div>
+
+											<div class="form-actions">
+												<div class="row">
+													<div class="col-md-12">
+														<button class="btn btn-default" type="submit">
+															Cancel
+														</button>
+														<button class="btn btn-primary" type="submit">
+															<i class="fa fa-save"></i>
+															Submit
+														</button>
+													</div>
+												</div>
+											</div>
+
+										</form>
+
+									</div>
+									<!-- end widget content -->
+
+						</article>
+						<!-- WIDGET END -->
+
+					</div>
+
+					<!-- end row -->
+
+					<!-- row -->
+
+
+										<!-- row -->
+										<div class="row">
+
+											<!-- NEW WIDGET START -->
+											<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+												<div class="ui-jqgrid ui-corner-all" id="gbox_jqgrid" dir="ltr" style="width: 1325px;"><div class="ui-widget-overlay jqgrid-overlay" id="lui_jqgrid" style="display: none;"></div><div class="loading ui-state-default ui-state-active" id="load_jqgrid" style="display: none;">Loading...</div><div class="ui-jqgrid-view" id="gview_jqgrid" style="width: 1325px;"><div class="ui-jqgrid-titlebar ui-jqgrid-caption ui-corner-top ui-helper-clearfix"><a role="link" class="ui-jqgrid-titlebar-close ui-corner-all HeaderButton" style="right: 0px;"><span class="ui-icon ui-icon-circle-triangle-n"></span></a><span class="ui-jqgrid-title">List Mesin</span></div><div style="width: 1325px;" class="ui-jqgrid-hdiv"><div class="ui-jqgrid-hbox"><table class="ui-jqgrid-htable table table-bordered table-hover" style="width: 1325px;" role="grid" aria-labelledby="gbox_jqgrid" cellspacing="0" cellpadding="0" border="0"><thead><tr class="ui-jqgrid-labels" role="rowheader"><th id="jqgrid_cb" role="columnheader" class="" style="width: 20px;"><div id="jqgh_jqgrid_cb"><input role="checkbox" id="cb_jqgrid" class="cbox" type="checkbox"><span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="jqgrid_act" role="columnheader" class="" style="width: 158px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_jqgrid_act" class="ui-jqgrid-sortable">Actions<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="jqgrid_id" role="columnheader" class="ui-state-hover" style="width: 158px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_jqgrid_id" class="ui-jqgrid-sortable">User ID<span class="s-ico" style=""><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="jqgrid_date" role="columnheader" class="" style="width: 158px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_jqgrid_date" class="ui-jqgrid-sortable">Nama<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="jqgrid_name" role="columnheader" class="" style="width: 158px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_jqgrid_name" class="ui-jqgrid-sortable"><span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="jqgrid_amount" role="columnheader" class="" style="width: 158px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_jqgrid_amount" class="ui-jqgrid-sortable"><span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th></tr></thead></table></div></div><div class="ui-jqgrid-bdiv" style="height: auto; width: 1325px;"><div style="position:relative;"><div></div><table id="jqgrid" tabindex="0" role="grid" aria-multiselectable="true" aria-labelledby="gbox_jqgrid" class="ui-jqgrid-btable table table-bordered table-striped" style="width: 1325px;" cellspacing="0" cellpadding="0" border="0"><tbody><tr class="jqgfirstrow" role="row" style="height:auto"><td role="gridcell" style="height:0px;width:20px;"></td><td role="gridcell" style="height: 0px; width: 158px;"></td><td role="gridcell" style="height: 0px; width: 158px;"></td><td role="gridcell" style="height: 0px; width: 158px;"></td><td role="gridcell" style="height: 0px; width: 158px;"></td><td role="gridcell" style="height: 0px; width: 158px;"></td><td role="gridcell" style="height: 0px; width: 158px;"></td><td role="gridcell" style="height: 0px; width: 158px;"></td><td role="gridcell" style="height: 0px; width: 154px;"></td></tr><tr role="row" id="1" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr ui-state-highlight" editable="0" aria-selected="true"><td role="gridcell" style="text-align:center;width: 20px;" aria-describedby="jqgrid_cb"><input role="checkbox" id="jqg_jqgrid_1" class="cbox" name="jqg_jqgrid_1" type="checkbox"></td><td role="gridcell" style="" title="" aria-describedby="jqgrid_act"><button class="btn btn-xs btn-default" data-original-title="Edit Row" onclick="jQuery('#jqgrid').editRow('1');"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default" data-original-title="Save Row" onclick="jQuery('#jqgrid').saveRow('1');"><i class="fa fa-save"></i></button><button class="btn btn-xs btn-default" data-original-title="Cancel" onclick="jQuery('#jqgrid').restoreRow('1');"><i class="fa fa-times"></i></button></td><td role="gridcell" style="" title="1" aria-describedby="jqgrid_id">1</td><td role="gridcell" style="" title="Mesin10-01" aria-describedby="jqgrid_date">Mesin10-01</td><td role="gridcell" style="" title="49.500.000" aria-describedby="jqgrid_name">49.500.000</td><td role="gridcell" style="text-align:right;" title="Merupakan mesin yang cocok di industri rumahan dan kesehatan" aria-describedby="jqgrid_amount">Merupakan mesin yang cocok di industri rumahan dan kesehatan</td></tr><tr role="row" id="10" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"><td role="gridcell" style="text-align:center;" aria-describedby="jqgrid_cb"><input role="checkbox" id="jqg_jqgrid_10" class="cbox" name="jqg_jqgrid_10" type="checkbox"></td><td role="gridcell" style="" title="" aria-describedby="jqgrid_act"><button class="btn btn-xs btn-default" data-original-title="Edit Row" onclick="jQuery('#jqgrid').editRow('10');"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default" data-original-title="Save Row" onclick="jQuery('#jqgrid').saveRow('10');"><i class="fa fa-save"></i></button><button class="btn btn-xs btn-default" data-original-title="Cancel" onclick="jQuery('#jqgrid').restoreRow('10');"><i class="fa fa-times"></i></button></td><td role="gridcell" style="" title="10" aria-describedby="jqgrid_id">10</td><td role="gridcell" style="" title="Mesin10-01" aria-describedby="jqgrid_date">Mesin10-01</td><td role="gridcell" style="" title="49.500.000" aria-describedby="jqgrid_name">49.500.000</td><td role="gridcell" style="text-align:right;" title="Merupakan mesin yang cocok di industri rumahan dan kesehatan" aria-describedby="jqgrid_amount">Merupakan mesin yang cocok di industri rumahan dan kesehatan</td></tr><tr role="row" id="11" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"><td role="gridcell" style="text-align:center;" aria-describedby="jqgrid_cb"><input role="checkbox" id="jqg_jqgrid_11" class="cbox" name="jqg_jqgrid_11" type="checkbox"></td><td role="gridcell" style="" title="" aria-describedby="jqgrid_act"><button class="btn btn-xs btn-default" data-original-title="Edit Row" onclick="jQuery('#jqgrid').editRow('11');"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default" data-original-title="Save Row" onclick="jQuery('#jqgrid').saveRow('11');"><i class="fa fa-save"></i></button><button class="btn btn-xs btn-default" data-original-title="Cancel" onclick="jQuery('#jqgrid').restoreRow('11');"><i class="fa fa-times"></i></button></td><td role="gridcell" style="" title="11" aria-describedby="jqgrid_id">11</td><td role="gridcell" style="" title="Mesin10-02" aria-describedby="jqgrid_date">Mesin10-02</td><td role="gridcell" style="" title="49.500.0002" aria-describedby="jqgrid_name">49.500.0002</td><td role="gridcell" style="text-align:right;" title="Merupakan mesin yang cocok di industri rumahan dan kesehatan" aria-describedby="jqgrid_amount">Merupakan mesin yang cocok di industri rumahan dan kesehatan</td></tr><tr role="row" id="12" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"><td role="gridcell" style="text-align:center;" aria-describedby="jqgrid_cb"><input role="checkbox" id="jqg_jqgrid_12" class="cbox" name="jqg_jqgrid_12" type="checkbox"></td><td role="gridcell" style="" title="" aria-describedby="jqgrid_act"><button class="btn btn-xs btn-default" data-original-title="Edit Row" onclick="jQuery('#jqgrid').editRow('12');"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default" data-original-title="Save Row" onclick="jQuery('#jqgrid').saveRow('12');"><i class="fa fa-save"></i></button><button class="btn btn-xs btn-default" data-original-title="Cancel" onclick="jQuery('#jqgrid').restoreRow('12');"><i class="fa fa-times"></i></button></td><td role="gridcell" style="" title="12" aria-describedby="jqgrid_id">12</td><td role="gridcell" style="" title="Mesin09-01" aria-describedby="jqgrid_date">Mesin09-01</td><td role="gridcell" style="" title="49.500.0003" aria-describedby="jqgrid_name">49.500.0003</td><td role="gridcell" style="text-align:right;" title="Merupakan mesin yang cocok di industri kesehatan" aria-describedby="jqgrid_amount">Merupakan mesin yang cocok di industri kesehatan</td></tr><tr role="row" id="13" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"><td role="gridcell" style="text-align:center;" aria-describedby="jqgrid_cb"><input role="checkbox" id="jqg_jqgrid_13" class="cbox" name="jqg_jqgrid_13" type="checkbox"></td><td role="gridcell" style="" title="" aria-describedby="jqgrid_act"><button class="btn btn-xs btn-default" data-original-title="Edit Row" onclick="jQuery('#jqgrid').editRow('13');"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default" data-original-title="Save Row" onclick="jQuery('#jqgrid').saveRow('13');"><i class="fa fa-save"></i></button><button class="btn btn-xs btn-default" data-original-title="Cancel" onclick="jQuery('#jqgrid').restoreRow('13');"><i class="fa fa-times"></i></button></td><td role="gridcell" style="" title="13" aria-describedby="jqgrid_id">13</td><td role="gridcell" style="" title="Mesin10-04" aria-describedby="jqgrid_date">Mesin10-04</td><td role="gridcell" style="" title="49.500.000" aria-describedby="jqgrid_name">49.500.000</td><td role="gridcell" style="text-align:right;" title="Merupakan mesin yang cocok di industri rumahan dan kesehatan" aria-describedby="jqgrid_amount">Merupakan mesin yang cocok di industri rumahan dan kesehatan</td></tr><tr role="row" id="14" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"><td role="gridcell" style="text-align:center;" aria-describedby="jqgrid_cb"><input role="checkbox" id="jqg_jqgrid_14" class="cbox" name="jqg_jqgrid_14" type="checkbox"></td><td role="gridcell" style="" title="" aria-describedby="jqgrid_act"><button class="btn btn-xs btn-default" data-original-title="Edit Row" onclick="jQuery('#jqgrid').editRow('14');"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default" data-original-title="Save Row" onclick="jQuery('#jqgrid').saveRow('14');"><i class="fa fa-save"></i></button><button class="btn btn-xs btn-default" data-original-title="Cancel" onclick="jQuery('#jqgrid').restoreRow('14');"><i class="fa fa-times"></i></button></td><td role="gridcell" style="" title="14" aria-describedby="jqgrid_id">14</td><td role="gridcell" style="" title="Mesin10-05" aria-describedby="jqgrid_date">Mesin10-05</td><td role="gridcell" style="" title="49.500.0002" aria-describedby="jqgrid_name">49.500.0002</td><td role="gridcell" style="text-align:right;" title="Merupakan mesin yang cocok di industri rumahan dan kesehatan" aria-describedby="jqgrid_amount">Merupakan mesin yang cocok di industri rumahan dan kesehatan</td></tr><tr role="row" id="15" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"><td role="gridcell" style="text-align:center;" aria-describedby="jqgrid_cb"><input role="checkbox" id="jqg_jqgrid_15" class="cbox" name="jqg_jqgrid_15" type="checkbox"></td><td role="gridcell" style="" title="" aria-describedby="jqgrid_act"><button class="btn btn-xs btn-default" data-original-title="Edit Row" onclick="jQuery('#jqgrid').editRow('15');"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default" data-original-title="Save Row" onclick="jQuery('#jqgrid').saveRow('15');"><i class="fa fa-save"></i></button><button class="btn btn-xs btn-default" data-original-title="Cancel" onclick="jQuery('#jqgrid').restoreRow('15');"><i class="fa fa-times"></i></button></td><td role="gridcell" style="" title="15" aria-describedby="jqgrid_id">15</td><td role="gridcell" style="" title="Mesin09-06" aria-describedby="jqgrid_date">Mesin09-06</td><td role="gridcell" style="" title="49.500.0003" aria-describedby="jqgrid_name">49.500.0003</td><td role="gridcell" style="text-align:right;" title="Merupakan mesin yang cocok di industri kesehatan" aria-describedby="jqgrid_amount">Merupakan mesin yang cocok di industri kesehatan</td></tr><tr role="row" id="16" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"><td role="gridcell" style="text-align:center;" aria-describedby="jqgrid_cb"><input role="checkbox" id="jqg_jqgrid_16" class="cbox" name="jqg_jqgrid_16" type="checkbox"></td><td role="gridcell" style="" title="" aria-describedby="jqgrid_act"><button class="btn btn-xs btn-default" data-original-title="Edit Row" onclick="jQuery('#jqgrid').editRow('16');"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default" data-original-title="Save Row" onclick="jQuery('#jqgrid').saveRow('16');"><i class="fa fa-save"></i></button><button class="btn btn-xs btn-default" data-original-title="Cancel" onclick="jQuery('#jqgrid').restoreRow('16');"><i class="fa fa-times"></i></button></td><td role="gridcell" style="" title="16" aria-describedby="jqgrid_id">16</td><td role="gridcell" style="" title="Mesin10-04" aria-describedby="jqgrid_date">Mesin10-04</td><td role="gridcell" style="" title="49.500.000" aria-describedby="jqgrid_name">49.500.000</td><td role="gridcell" style="text-align:right;" title="Merupakan mesin yang cocok di industri rumahan dan kesehatan" aria-describedby="jqgrid_amount">Merupakan mesin yang cocok di industri rumahan dan kesehatan</td></tr><tr role="row" id="17" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"><td role="gridcell" style="text-align:center;" aria-describedby="jqgrid_cb"><input role="checkbox" id="jqg_jqgrid_17" class="cbox" name="jqg_jqgrid_17" type="checkbox"></td><td role="gridcell" style="" title="" aria-describedby="jqgrid_act"><button class="btn btn-xs btn-default" data-original-title="Edit Row" onclick="jQuery('#jqgrid').editRow('17');"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default" data-original-title="Save Row" onclick="jQuery('#jqgrid').saveRow('17');"><i class="fa fa-save"></i></button><button class="btn btn-xs btn-default" data-original-title="Cancel" onclick="jQuery('#jqgrid').restoreRow('17');"><i class="fa fa-times"></i></button></td><td role="gridcell" style="" title="17" aria-describedby="jqgrid_id">17</td><td role="gridcell" style="" title="Mesin10-03" aria-describedby="jqgrid_date">Mesin10-03</td><td role="gridcell" style="" title="49.500.0002" aria-describedby="jqgrid_name">49.500.0002</td><td role="gridcell" style="text-align:right;" title="Merupakan mesin yang cocok di industri rumahan dan kesehatan" aria-describedby="jqgrid_amount">Merupakan mesin yang cocok di industri rumahan dan kesehatan</td></tr><tr role="row" id="18" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"><td role="gridcell" style="text-align:center;" aria-describedby="jqgrid_cb"><input role="checkbox" id="jqg_jqgrid_18" class="cbox" name="jqg_jqgrid_18" type="checkbox"></td><td role="gridcell" style="" title="" aria-describedby="jqgrid_act"><button class="btn btn-xs btn-default" data-original-title="Edit Row" onclick="jQuery('#jqgrid').editRow('18');"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default" data-original-title="Save Row" onclick="jQuery('#jqgrid').saveRow('18');"><i class="fa fa-save"></i></button><button class="btn btn-xs btn-default" data-original-title="Cancel" onclick="jQuery('#jqgrid').restoreRow('18');"><i class="fa fa-times"></i></button></td><td role="gridcell" style="" title="18" aria-describedby="jqgrid_id">18</td><td role="gridcell" style="" title="Mesin09-01" aria-describedby="jqgrid_date">Mesin09-01</td><td role="gridcell" style="" title="49.500.0003" aria-describedby="jqgrid_name">49.500.0003</td><td role="gridcell" style="text-align:right;" title="Merupakan mesin yang cocok di industri kesehatan" aria-describedby="jqgrid_amount">Merupakan mesin yang cocok di industri kesehatan</td></tr></tbody></table></div></div></div><div class="ui-jqgrid-resize-mark" id="rs_mjqgrid">&nbsp;</div><div id="pjqgrid" style="width: 1325px;" class="ui-jqgrid-pager ui-corner-bottom" dir="ltr"><div id="pg_pjqgrid" class="ui-pager-control" role="group"><table class="ui-pg-table" style="width:100%;table-layout:fixed;height:100%;" role="row" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td id="pjqgrid_left" align="left"><table class="ui-pg-table navtable" style="float:left;table-layout:auto;" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="ui-pg-button ui-corner-all" title="" id="del_jqgrid" data-original-title="Delete selected row"><div class="btn btn-sm btn-primary"><span class="fa fa-trash-o"></span></div></td><td class="ui-pg-button ui-state-disabled" style="width:4px;" data-original-title="" title=""><span class="ui-separator"></span></td><td class="ui-pg-button ui-corner-all" title="" id="search_jqgrid" data-original-title="Find records"><div class="btn btn-sm btn-primary"><span class="fa fa-search"></span></div></td><td class="ui-pg-button ui-corner-all" title="" id="refresh_jqgrid" data-original-title="Reload Grid"><div class="btn btn-sm btn-primary"><span class="fa fa-refresh"></span></div></td><td class="ui-pg-button ui-corner-all" id="jqgrid_iladd" title="" data-original-title="Add new row"><div class="btn btn-sm btn-primary"><span class="fa fa-plus"></span></div></td><td class="ui-pg-button ui-corner-all" id="jqgrid_iledit" title="" data-original-title="Edit selected row"><div class="btn btn-sm btn-primary"><span class="fa fa-pencil"></span></div></td><td class="ui-pg-button ui-corner-all ui-state-disabled" id="jqgrid_ilsave" title="" data-original-title="Save row"><div class="btn btn-sm btn-success"><span class="fa fa-save"></span></div></td><td class="ui-pg-button ui-corner-all ui-state-disabled" id="jqgrid_ilcancel" title="" data-original-title="Cancel row editing"><div class="btn btn-sm btn-danger"><span class="fa fa-times"></span></div></td></tr></tbody></table></td><td id="pjqgrid_center" style="white-space: pre; width: 294.033px;" align="center"><table style="table-layout:auto;" class="ui-pg-table" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td id="first_pjqgrid" class="ui-pg-button ui-corner-all ui-state-disabled"><div class="btn btn-sm btn-default"><span class="fa fa-fast-backward"></span></div></td><td id="prev_pjqgrid" class="ui-pg-button ui-corner-all ui-state-disabled"><div class="btn btn-sm btn-default"><span class="fa fa-backward"></span></div></td><td class="ui-pg-button ui-state-disabled" style="width:4px;"><span class="ui-separator"></span></td><td dir="ltr">Page <input class="ui-pg-input" size="2" maxlength="7" value="0" role="textbox" type="text"> of <span id="sp_1_pjqgrid">2</span></td><td class="ui-pg-button ui-state-disabled" style="width:4px;"><span class="ui-separator"></span></td><td id="next_pjqgrid" class="ui-pg-button ui-corner-all"><div class="btn btn-sm btn-default"><span class="fa fa-forward"></span></div></td><td id="last_pjqgrid" class="ui-pg-button ui-corner-all"><div class="btn btn-sm btn-default"><span class="fa fa-fast-forward"></span></div></td><td dir="ltr"><select class="ui-pg-selbox" role="listbox"><option role="option" value="10" selected="selected">10</option><option role="option" value="20">20</option><option role="option" value="30">30</option></select></td></tr></tbody></table></td><td id="pjqgrid_right" align="right"><div dir="ltr" style="text-align:right" class="ui-paging-info">View 1 - 10 of 18</div></td></tr></tbody></table></div></div></div>
+
+											</article>
+											<!-- WIDGET END -->
+
+										</div>
+
+										<!-- end row -->
+
+
+
+					<!-- end row -->
+
+				</section>
+				<!-- end widget grid -->
+
+			</div>
+			<!-- END MAIN CONTENT -->
+
+		</div>
+		<!-- END MAIN PANEL -->
+
+		<!-- PAGE FOOTER -->
+		<div class="page-footer">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<span class="txt-color-white">ePRC Beta 0.1 <span class="hidden-xs"> - Kangen Water Team</span> © 2018</span>
+				</div>
+			</div>
+		</div>
+		<!-- END PAGE FOOTER -->
+
+		<!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+		Note: These tiles are completely responsive,
+		you can add as many as you like
+		-->
+		<div id="shortcut">
+			<ul>
+				<li>
+					<a href="inbox.html" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="calendar.html" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
+				</li>
+				<li>
+					<a href="gmap-xml.html" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>
+				</li>
+				<li>
+					<a href="invoice.html" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice <span class="label pull-right bg-color-darken">99</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="gallery.html" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
+				</li>
+				<li>
+					<a href="profile.html" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My Profile </span> </span> </a>
+				</li>
+			</ul>
+		</div>
+		<!-- END SHORTCUT AREA -->
+
+		<!--================================================== -->
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+		<script src="fonts/google/jquery_3.2.1_jquery.min.js"></script>
+		<script>
+			if (!window.jQuery) {
+				document.write('<script src="js/libs/jquery-3.2.1.min.js"><\/script>');
+			}
+		</script>
+
+		<script src="fonts/google/jqueryui_1.12.1_jquery-ui.min.js"></script>
+		<script>
+			if (!window.jQuery.ui) {
+				document.write('<script src="js/libs/jquery-ui.min.js"><\/script>');
+			}
+		</script>
+
+		<!-- IMPORTANT: APP CONFIG -->
+		<script src="js/app.config.js"></script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
+
+		<!-- BOOTSTRAP JS -->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="js/notification/SmartNotification.min.js"></script>
+
+		<!-- JARVIS WIDGETS -->
+		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+
+		<!-- EASY PIE CHARTS -->
+		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+		<!-- SPARKLINES -->
+		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+		<!-- JQUERY SELECT2 INPUT -->
+		<script src="js/plugin/select2/select2.min.js"></script>
+
+		<!-- JQUERY UI + Bootstrap Slider -->
+		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+		<!-- browser msie issue fix -->
+		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+		<!-- FastClick: For mobile devices -->
+		<script src="js/plugin/fastclick/fastclick.min.js"></script>
+
+		<!--[if IE 8]>
+
+		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+		<![endif]-->
+
+		<!-- Demo purpose only -->
+		<script src="js/demo.min.js"></script>
+
+		<!-- MAIN APP JS FILE -->
+		<script src="js/app.min.js"></script>
+
+		<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
+		<!-- Voice command : plugin -->
+		<script src="js/speech/voicecommand.min.js"></script>
+
+		<!-- SmartChat UI : plugin -->
+		<script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
+		<script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>
+
+		<!-- PAGE RELATED PLUGIN(S)
+		<script src="..."></script>-->
+
+
+		<script>
+
+		// DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+		$(document).ready(function() {
+
+			pageSetUp();
+
+			// PAGE RELATED SCRIPTS
+
+			$('.tree > ul').attr('role', 'tree').find('ul').attr('role', 'group');
+			$('.tree').find('li:has(ul)').addClass('parent_li').attr('role', 'treeitem').find(' > span').attr('title', 'Collapse this branch').on('click', function(e) {
+				var children = $(this).parent('li.parent_li').find(' > ul > li');
+				if (children.is(':visible')) {
+					children.hide('fast');
+					$(this).attr('title', 'Expand this branch').find(' > i').removeClass().addClass('fa fa-lg fa-plus-circle');
+				} else {
+					children.show('fast');
+					$(this).attr('title', 'Collapse this branch').find(' > i').removeClass().addClass('fa fa-lg fa-minus-circle');
+				}
+				e.stopPropagation();
+			});
+
+		})
+
+		</script>
+
+		<!-- Your GOOGLE ANALYTICS CODE Below -->
+		<script>
+			// var _gaq = _gaq || [];
+			// 	_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+			// 	_gaq.push(['_trackPageview']);
+			//
+			// (function() {
+			// 	var ga = document.createElement('script');
+			// 	ga.type = 'text/javascript';
+			// 	ga.async = true;
+			// 	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			// 	var s = document.getElementsByTagName('script')[0];
+			// 	s.parentNode.insertBefore(ga, s);
+			// })();
+
+		</script>
+
+	</body>
+
+</html>

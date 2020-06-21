@@ -1,0 +1,16 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class KartuPersediaanAcc extends Model
+{
+    public $incrementing = false;
+    protected $table = 'kartu_persediaan_acc';
+    protected $fillable = [
+        'index', 'kode_acc', 'type_ref', 'id_ref', 'qty', 'harga',
+        'jumlah', 'saldo_qty', 'saldo_harga', 'saldo_jumlah', 
+        'keterangan', 'created_at', 'updated_at'
+    ];
+}

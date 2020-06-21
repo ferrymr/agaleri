@@ -1,0 +1,24 @@
+/* Add here all your css styles (customizations) */
+
+.g-bg-black {
+  background-color: #252525 !important;
+}
+
+.g-bg-primary {
+  background-color: #ad974e !important;
+}
+
+.nav-link {
+  color: rgb(255, 255, 255) !important;
+}
+
+.g-brd-bottom{
+  border-bottom: solid 0px transparent !important;
+}
+
+.g-bk-login{
+  background: url(../img/bg/login_bg.png); background-size: cover;
+}
+.g-bk-signup{
+  background: url(../img/bg/signup_bg.png); background-size: cover;
+}
